@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Portal</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite cdn -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container mx-auto">
+      <nav class="my-8">
+        <div class="flex items-center justify-between">
+          <div class="text-xl font-semibold">
+            <span class="bg-indigo-600 rounded-md p-2 text-white">News</span>
+            <span>Portal</span>
+          </div>
+
+          <div>
+            <ul
+            
+              class="flex items-center gap-6 cursor-pointer font-semibold text-indigo-800"
+            >
+              <li>News</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <hr />
+
+      <div class="flex justify-center my-8">
+        <ul id="category-container" class="flex items-center gap-10 text-gray-400 cursor-pointer">
+        </ul>
+      </div>
+    </header>
+    <main class="container mx-auto my-20">
+      <section>
+        <div id="cards-container" class="grid grid-cols-3 gap-6">
+
+        </div>
+      </section>
+    </main>
+
+    <!-- scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
