@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News Portal</title>
+    <title>Daily Portal</title>
 
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- flowbite cdn -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
@@ -16,15 +22,16 @@
   <body>
     <header class="container mx-auto">
       <nav class="my-8">
-        <div class="flex items-center justify-between">
+        <div
+          class="flex items-center justify-around md:justify-around lg:justify-between"
+        >
           <div class="text-xl font-semibold">
-            <span class="bg-indigo-600 rounded-md p-2 text-white">News</span>
+            <span class="bg-indigo-600 rounded-md p-2 text-white">Daily</span>
             <span>Portal</span>
           </div>
 
           <div>
             <ul
-            
               class="flex items-center gap-6 cursor-pointer font-semibold text-indigo-800"
             >
               <li>News</li>
@@ -37,16 +44,47 @@
       <hr />
 
       <div class="flex justify-center my-8">
-        <ul id="category-container" class="flex items-center gap-10 text-gray-400 cursor-pointer">
-        </ul>
+        <ul
+          id="category-container"
+          class="flex flex-wrap justify-center font-semibold items-center gap-10 text-gray-400 cursor-pointer"
+        ></ul>
       </div>
     </header>
     <main class="container mx-auto my-20">
       <section>
-        <div id="cards-container" class="grid grid-cols-3 gap-6">
-
-        </div>
+        <div
+          id="cards-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        ></div>
       </section>
+
+      <!-- modal section -->
+      <div>
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="modalId" class="modal modal-bottom sm:modal-middle">
+          <form
+            method="dialog"
+            class="modal-box space-y-4 md:w-11/12 md:max-w-5xl"
+          >
+            <button
+              class="btn btn-sm btn-circle bg-gray-300 btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+            <h3 id="news-title" class="font-bold text-2xl md:text-4xl">
+              News Title
+            </h3>
+            <img id="news-img" alt="news-cover" />
+            <p id="news-desc" class="py-4 font-medium text-lg">
+              News Description
+            </p>
+            <div class="modal-action">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn btn-primary">Close</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
     </main>
 
     <!-- scripts -->
